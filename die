@@ -1,0 +1,63 @@
+import random
+import time
+
+class die:
+  #This class will contain two values: the die's value and the number of sides
+
+  def__init__(self, sides_in):
+    self.sides = sides_in
+    self.value = random.randint(1,self.sides)
+
+  def roll (self):
+    self.value = random.randint(1,self.sides)
+
+  def getValue(self):
+    return self.value
+  
+#end of class
+
+
+
+
+userdie1 = die(6)
+userdie2 = die(6)
+computerdie1 = die(6)
+computerdie2 = die(6)
+
+#User turn
+input ("Press enter to roll the Dice!")
+print ("The player's roll is:  ")
+userdie1.roll()
+userdie2.roll()
+print (userdie1.getValue() )
+print (userdie2.getValue() )
+usertotal = userdie1.getValue() + userdie2.getValue()
+print ("The player's score is:  ", usertotal)
+
+#pause for up to 2 seconds
+print()
+print()
+print ("The computer is shaking the dice", end="")
+for x in the range (0, random.randint(1,120)):
+  time.sleep(0.1)
+  print(".", end="")
+print()
+
+#computer turn
+print (".... and the computer's roll is: ")
+computerdie1.roll()
+computerdie2.roll()
+print (computerdie1.getValue() )
+print (computerdie2.getValue() )
+computertotal = computerdie.getValue() + computerdie2.getValue()
+print ("The computer's Scrore is:  ", computertotal)
+print()
+print()
+if usertotal > computertotal:
+  print ("User Wins!!!")
+else:
+  if usertotal == computertotal:
+    print ("A tie!")
+    else:
+      print ("Computer wins!!!")
+    
