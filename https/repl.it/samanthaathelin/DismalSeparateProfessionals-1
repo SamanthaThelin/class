@@ -1,0 +1,55 @@
+#Define the class
+class InventoryItem:
+
+ def _init_(self, partno, description, qty, cost):
+    self.inventoryPartNo = partno
+    self.inventoryDescription = description
+    self.inventoryQty = qty
+    self.inventoryCost = cost
+
+ def getPartNo(self):
+  return self.inventoryPartNo
+
+ def getdescription(self):
+   return self.inventoryDescription
+
+ def getQty(self):
+  return self.inventoryQty
+
+ def getCost(self):
+  return self.inventoryCost
+
+ def setPartNo(self, partno):
+  self.inventoryPartNo = partno
+
+ def setDescription(self, description):
+  self.inventoryDescription = description
+
+ def setQty(self, qty):
+  self.inverntoryQty = qty
+
+ def setCost(self, cost):
+  self.inventoryCost = cost
+
+ def calcInventoryValue(self):
+  return self.inventoryCost * self.inventoryQty
+
+#Note: the \ at the end of each line is used beacuse the command is too long to fit
+#within one line
+ def toString(self):
+  return "Part No: " + str(self.inventoryPartNo) + "\n" \
+   + "Description: " + self.inventoryDescription + "\n" \
+   + "Qty: " + str(self.inventoryQty) + "\n" \
+   + "Cost: " + str(self.inventoryCost) + "\n" \
+   + "Inventory value: " +str(self.calcInventoryValue()) + "\n" 
+
+#end of class
+
+
+
+#Program starts running here
+item1 = InventoryItem(1101, "Widget", 3, 10.00)
+item2 = InventoryItem(1103, "thingamajig", 5, 99.99)
+
+print (item1.toString())
+print (item2.toString())
